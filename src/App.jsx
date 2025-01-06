@@ -1,15 +1,17 @@
-import Banner from "./components/Banner";
-import Navbar from "./components/Navbar";
-import Footer from "./Components/Footer/index.jsx";
-import RoomList from "./Components/RoomList/RoomList.jsx";
-
-export default function App() {
+import {BrowserRouter} from "react-router-dom";
+import {Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
+import Navbar from "./components/Navbar/index.jsx";
+import RoomsPage from './Pages/RoomsPage'
+function App () {
     return (
-        <div className="bg-[#faf4ef] font-serif">
+        <BrowserRouter>
             <Navbar />
-            <Banner />
-            <RoomList />
-            <Footer />
-        </div>
+            <Routes >
+                <Route path = "/" element={<RoomsPage />} />
+                {/*<Route path = '/room/id' element={*/}
+            </Routes>
+        </BrowserRouter>
     )
 }
+export default App;
