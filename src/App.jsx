@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/index.jsx";
 import RoomsPage from './Pages/RoomsPage';
-import SingleRoomPage from './Pages/SingleRoomPage'; // Add this import if not already present
+import SingleRoomPage from './Pages/SingleRoomPage';
 import BookingsPage from './Pages/BookingsPage';
 import ReportPage from './Pages/ReportPage';
 function App() {
@@ -15,7 +15,7 @@ function App() {
                 <Route path= '/report' element={<ReportPage />} />
             </Routes>
         </BrowserRouter>
-    );
+    )
 }
 
 export default App;
