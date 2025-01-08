@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Heading from "../../components/Heading/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
+import Subheading from "../../components/Subheading/index.jsx";
+import photocollage from "../../../src/images/photocollage.png";
 
 function SingleRoomPage() {
     const { id } = useParams();
@@ -27,12 +28,24 @@ function SingleRoomPage() {
 
     return (
         <section className="bg-[#faf4ef] font-serif">
-            <Heading text={name}/>
-            <div className="grid md:grid-cols-2 md:grid-rows-1 gap-4">
-                <p className="mx-4 my-1 md:text-lg md:col-span-1">
-                    This beautiful room is a {type} room and sleeps {min} - {max} guests.
-                </p>
-                <img className="m-4 inline-grid md:col-span-1" src={image} alt=""/>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 object-contain  ">
+                <div className='md:col-span-1 md:place-items-start lg:place-items-stretch md:gap-4 lg:gap-10 md:mx-4'>
+                    <h1 className="mx-4 my-1 p-2 text-2xl md:text-3xl font-serif text-[#00472d] underline underline-offset-2">{name}</h1>
+                    <Subheading text='Description'/>
+                    <p className='mx-4 md:text-lg'>
+                        This beautiful room is a {type} room. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla elementum nunc vel risus euismod porta. Phasellus eu risus nibh. Aenean a leo quis dui
+                        sodales auctor. Nam vitae lacus ex. Suspendisse hendrerit ex eu odio porta luctus. Fusce at mi
+                        sed orci cursus egestas. Proin quis tortor a lectus pulvinar accumsan.
+                    </p>
+                    <Subheading text='Accomodates'/>
+                    <p className="mx-4 md:text-lg ">
+                        The {name} room sleeps {min} - {max} guests.
+                    </p>
+                </div>
+                <img
+                    className="m-4 inline-grid md:col-span-1 max-w-80 max-h-80 place-items-center lg:place-items-end lg:max-w-full lg:max-h-full " src={image} alt=""/>
+                <img className='hidden lg:block' src={photocollage} alt='collage of photos of tropical islands' />
             </div>
             <Footer/>
         </section>
